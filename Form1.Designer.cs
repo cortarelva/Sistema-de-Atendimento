@@ -30,6 +30,7 @@ namespace Sistema_de_Atendimento
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblGcaract = new System.Windows.Forms.Label();
             this.lblPcaract = new System.Windows.Forms.Label();
             this.lblLetraPrio = new System.Windows.Forms.Label();
             this.lblLetraGeral = new System.Windows.Forms.Label();
@@ -48,10 +49,13 @@ namespace Sistema_de_Atendimento
             this.btnGuichet3 = new System.Windows.Forms.Button();
             this.btnGuichet2 = new System.Windows.Forms.Button();
             this.btnGuichet1 = new System.Windows.Forms.Button();
-            this.lblGcaract = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -75,6 +79,17 @@ namespace Sistema_de_Atendimento
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Senhas";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblGcaract
+            // 
+            this.lblGcaract.AutoSize = true;
+            this.lblGcaract.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGcaract.ForeColor = System.Drawing.Color.Orange;
+            this.lblGcaract.Location = new System.Drawing.Point(247, 74);
+            this.lblGcaract.Name = "lblGcaract";
+            this.lblGcaract.Size = new System.Drawing.Size(55, 33);
+            this.lblGcaract.TabIndex = 8;
+            this.lblGcaract.Text = "G -";
             // 
             // lblPcaract
             // 
@@ -175,12 +190,13 @@ namespace Sistema_de_Atendimento
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.MediumBlue;
+            this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.lblGiche);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblDisplayNum);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.PaleTurquoise;
+            this.groupBox2.ForeColor = System.Drawing.Color.LightGray;
             this.groupBox2.Location = new System.Drawing.Point(26, 38);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(982, 287);
@@ -293,16 +309,41 @@ namespace Sistema_de_Atendimento
             this.btnGuichet1.UseVisualStyleBackColor = true;
             this.btnGuichet1.Click += new System.EventHandler(this.btnGuichet1_Click);
             // 
-            // lblGcaract
+            // listBox1
             // 
-            this.lblGcaract.AutoSize = true;
-            this.lblGcaract.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGcaract.ForeColor = System.Drawing.Color.Orange;
-            this.lblGcaract.Location = new System.Drawing.Point(247, 74);
-            this.lblGcaract.Name = "lblGcaract";
-            this.lblGcaract.Size = new System.Drawing.Size(55, 33);
-            this.lblGcaract.TabIndex = 8;
-            this.lblGcaract.Text = "G -";
+            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.listBox1.BackColor = System.Drawing.Color.MediumBlue;
+            this.listBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.ForeColor = System.Drawing.Color.Gold;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 19;
+            this.listBox1.Location = new System.Drawing.Point(69, 61);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBox1.Size = new System.Drawing.Size(128, 152);
+            this.listBox1.TabIndex = 4;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 18);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Senhas Anteriores";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumBlue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Location = new System.Drawing.Point(516, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 238);
+            this.panel1.TabIndex = 6;
             // 
             // Form1
             // 
@@ -321,6 +362,8 @@ namespace Sistema_de_Atendimento
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -347,6 +390,9 @@ namespace Sistema_de_Atendimento
         private System.Windows.Forms.Label lblPcaract;
         private System.Windows.Forms.Label lblSenhasEspera;
         private System.Windows.Forms.Label lblGcaract;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
