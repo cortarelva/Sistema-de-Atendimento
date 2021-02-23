@@ -52,7 +52,6 @@ namespace Sistema_de_Atendimento
             lblLetraGeral.Text = letra[indexGeral].ToString();
             lblNumGeral.Text = contadorGeral.ToString();
             lblSenhasEspera.Text = " ";
-
             contadorGeral++;
         }
 
@@ -125,6 +124,7 @@ namespace Sistema_de_Atendimento
                     lblDisplayNum.Text = numPrio.Dequeue().ToString();
                     lblGiche.Text = btn.Text;
                     counterPrioritarias++;
+                    SomChamada();
                 }
                 else
                 {
@@ -134,6 +134,7 @@ namespace Sistema_de_Atendimento
                         lblDisplayNum.Text = numGeral.Dequeue().ToString();
                         lblGiche.Text = btn.Text;
                         counterPrioritarias = 0;
+                        SomChamada();
                     }
                     else { lblSenhasEspera.Text = "Não há senhas em espera"; counterPrioritarias = 0; }
                 }
@@ -145,15 +146,7 @@ namespace Sistema_de_Atendimento
             foreach (string senha in senhaChamada)
             {
                 listBox1.Items.Add(senha);
-            }
-
-
-            /*
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = @"bonus.wav";
-            player.Load();
-            player.Play();
-            */
+            } 
         }
 
         private void btnGuichet2_Click(object sender, EventArgs e)
@@ -167,6 +160,7 @@ namespace Sistema_de_Atendimento
                     lblDisplayNum.Text = numPrio.Dequeue().ToString();
                     lblGiche.Text = btn.Text;
                     counterPrioritarias++;
+                    SomChamada();
                 }
                 else
                 {
@@ -176,6 +170,7 @@ namespace Sistema_de_Atendimento
                         lblDisplayNum.Text = numGeral.Dequeue().ToString();
                         lblGiche.Text = btn.Text;
                         counterPrioritarias = 0;
+                        SomChamada();
                     }
                     else { lblSenhasEspera.Text = "Não há senhas em espera"; counterPrioritarias = 0; }
                 }
@@ -189,7 +184,6 @@ namespace Sistema_de_Atendimento
                 listBox1.Items.Add(senha);
                 
             }
-            
         }
 
         private void btnGuichet3_Click(object sender, EventArgs e)
@@ -204,6 +198,7 @@ namespace Sistema_de_Atendimento
                     lblDisplayNum.Text = numPrio.Dequeue().ToString();
                     lblGiche.Text = btn.Text;
                     counterPrioritarias++;
+                    SomChamada();
                 }
                 else
                 {
@@ -213,6 +208,7 @@ namespace Sistema_de_Atendimento
                         lblDisplayNum.Text = numGeral.Dequeue().ToString();
                         lblGiche.Text = btn.Text;
                         counterPrioritarias = 0;
+                        SomChamada();
                     }
                     else { lblSenhasEspera.Text = "Não há senhas em espera"; counterPrioritarias = 0; }
                 }
@@ -223,7 +219,7 @@ namespace Sistema_de_Atendimento
             foreach (string senha in senhaChamada)
             {
                 listBox1.Items.Add(senha);
-            }
+            } 
         }
         private void lblSenhasEspera_Click(object sender, EventArgs e)
         {
@@ -234,5 +230,14 @@ namespace Sistema_de_Atendimento
         {
 
         }
+
+        public void SomChamada()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = @"C:\Development\curso-programacao-iefp\c#\Sistema de Atendimento\Echo-Harp.wav";
+            player.Load();
+            player.Play();
+        }
+
     }//form
 }//namespace
