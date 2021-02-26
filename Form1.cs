@@ -15,7 +15,6 @@ namespace Sistema_de_Atendimento
         Queue<string> numGeral = new Queue<string>();
         Queue<string> numPrio = new Queue<string>();
         Queue<string> senhaChamada = new Queue<string>();
-       // string[] senhaChamada = new string[255];
         char[] letra = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
         int contadorGeral = 1;
         int contadorPrio = 1;
@@ -41,7 +40,7 @@ namespace Sistema_de_Atendimento
             
             if(contadorGeral == 100)
             {
-               indexGeral = indexGeral + 1;
+               indexGeral++;
                contadorGeral = 0; 
             }
 
@@ -74,9 +73,6 @@ namespace Sistema_de_Atendimento
             lblNumPrio.Text = contadorPrio.ToString();
             lblSenhasEspera.Text = " ";
             contadorPrio++;
-            
-
-
         }
 
         
@@ -111,7 +107,7 @@ namespace Sistema_de_Atendimento
 
         }
 
-        //Botoes dos guichets
+        //Botoes dos guiches
         private void btnGuichet1_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
@@ -141,11 +137,11 @@ namespace Sistema_de_Atendimento
             }
             else { lblSenhasEspera.Text = "Não há senhas em espera"; counterPrioritarias = 0; }
 
-
+            //label que mostra as senhas saidas ate entao
             listBox1.Items.Clear();
             foreach (string senha in senhaChamada)
             {
-                listBox1.Items.Add(senha);
+                listBox1.Items.Insert(0, senha);
             } 
         }
 
@@ -177,12 +173,11 @@ namespace Sistema_de_Atendimento
             }
             else { lblSenhasEspera.Text = "Não há senhas em espera"; counterPrioritarias = 0; }
 
-
+            //label que mostra as senhas saidas ate entao
             listBox1.Items.Clear();
             foreach (string senha in senhaChamada)
             {
-                listBox1.Items.Add(senha);
-                
+                listBox1.Items.Insert(0, senha);
             }
         }
 
@@ -215,10 +210,11 @@ namespace Sistema_de_Atendimento
             }
             else { lblSenhasEspera.Text = "Não há senhas em espera"; counterPrioritarias = 0; }
 
+            //label que mostra as senhas saidas ate entao
             listBox1.Items.Clear();
             foreach (string senha in senhaChamada)
             {
-                listBox1.Items.Add(senha);
+                listBox1.Items.Insert(0,senha);
             } 
         }
         private void lblSenhasEspera_Click(object sender, EventArgs e)
@@ -231,6 +227,8 @@ namespace Sistema_de_Atendimento
 
         }
 
+        // Para fazer a campainha funcionar é necessario atualizar o 
+        //caminho para o ficheiro Echo-Harp.wav ou entao remover esta função dos metodos onde esta referenciada
         public void SomChamada()
         {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
